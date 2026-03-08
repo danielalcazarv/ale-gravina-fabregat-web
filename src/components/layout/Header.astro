@@ -1,0 +1,48 @@
+---
+import Container from "../layout/Container.astro";
+---
+
+<header>
+  <Container>
+    <nav class="nav">
+      <a href="/" class="logo">
+        Ale Gravina Fabregat
+      </a>
+
+      <ul class="menu">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/about">Sobre mí</a></li>
+        <li><a href="/services">Servicios</a></li>
+        <li><a href="/contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </Container>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    font-weight: bold;
+  }
+</style>

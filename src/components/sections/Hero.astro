@@ -1,0 +1,105 @@
+---
+import Container from "../layout/Container.astro";
+---
+
+<section class="hero">
+  <Container>
+    <div class="hero-grid">
+
+      <div class="hero-text">
+
+        <h1>
+          Entrena mejor.<br />
+          Desde dentro.
+        </h1>
+
+        <p class="subtitle">
+          Diseño programas de formación, clínicas y asesorías técnicas que elevan el nivel del cuerpo técnico y sostienen el rendimiento durante la temporada.
+        </p>
+
+        <!--
+        <p class="bio">
+          Profesor de Educación Física · FIVB Nivel 2 · Nivel 3 RFEVB (máx. España) · Nivel 2 FEVA (máx. Argentina) · Más de 30 años dentro del voleibol, primero como jugador, ahora como entrenador y formador. Colaborador de la Federació Catalana de Voleibol.
+        </p>
+        -->
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="/contact">
+            Hablemos de tu proyecto →
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src=/hero.png alt="Ale Gravina Fabregat entrenador de vóley" />
+      </div>
+
+    </div>
+  </Container>
+</section>
+
+<style>
+
+.hero {
+  padding: 100px 0 40px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #666;
+  max-width: 550px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+}
+
+</style>
