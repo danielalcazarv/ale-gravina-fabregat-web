@@ -25,7 +25,11 @@ import Container from "../layout/Container.astro";
 
         <div class="hero-actions">
           <a class="btn-primary" href="/contact">
-            Hablemos de tu proyecto →
+            Hablemos de tu proyecto
+
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+            </svg>
           </a>
         </div>
 
@@ -77,12 +81,27 @@ import Container from "../layout/Container.astro";
 }
 
 .btn-primary {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
   background: black;
   color: white;
   padding: 0.8rem 1.6rem;
   text-decoration: none;
   font-weight: 500;
   border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background: #eaeaea;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.icon{
+  width:18px;
+  height:18px;
+  fill:currentColor;
 }
 
 .hero-image img {
