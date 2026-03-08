@@ -1,0 +1,86 @@
+---
+import Container from "../layout/Container.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+---
+
+<section class="services">
+
+  <Container>
+
+    <header class="services-header">
+      <h2>¿En qué puedo ayudarte?</h2>
+      <p>
+        Trabajo con clubes y federaciones que quieren dar un salto real en su nivel
+        de juego y en la calidad de sus entrenadores.
+      </p>
+    </header>
+
+    <div class="services-grid">
+
+      <ServiceCard
+        title="Formación que activa a tu cuerpo técnico"
+        description="Diseño e imparto clínicas y congresos adaptados al nivel real de tus entrenadores. No son charlas genéricas — son sesiones con contenido técnico actual y aplicación práctica inmediata."
+        result="Herramientas concretas que sus entrenadores pueden aplicar en el siguiente entrenamiento."
+        cta="Solicitar información"
+      />
+
+      <ServiceCard
+        title="Un enfoque específico, en profundidad"
+        description="Masterclass centradas en bloques técnicos o tácticos concretos: defensa, organización del ataque, lectura del juego o liderazgo en pista."
+        result="Una visión clara y actualizada sobre un aspecto del juego con ejemplos reales."
+        cta="Solicitar información"
+      />
+
+      <ServiceCard
+        title="Aprender haciendo. En pista."
+        description="Talleres y campus que combinan teoría aplicada con trabajo real sobre el terreno junto a tus jugadores o entrenadores."
+        result="Jugadores con más recursos técnicos y entrenadores con herramientas pedagógicas para sostener esa mejora."
+        cta="Solicitar información"
+      />
+
+      <ServiceCard
+        title="Alguien que te acompaña, no que te juzga"
+        description="Asesoría personalizada para entrenadores y directores técnicos. Analizamos planificación, rendimiento y liderazgo."
+        result="Decisiones más claras, planificación más sólida y liderazgo más consciente."
+        cta="Cuéntame tu situación"
+      />
+
+    </div>
+
+  </Container>
+
+</section>
+
+
+<style>
+
+.services{
+  padding:6rem 0;
+}
+
+.services-header{
+  max-width:720px;
+  margin-bottom:3rem;
+}
+
+.services-header h2{
+  margin-bottom:1rem;
+}
+
+.services-header p{
+  line-height:1.6;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+}
+
+@media (max-width:900px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>

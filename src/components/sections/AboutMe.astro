@@ -1,0 +1,126 @@
+---
+import Container from "../layout/Container.astro";
+---
+
+<section id="sobre-mi" class="about">
+  <Container>
+
+    <div class="about-grid">
+
+      <!-- TEXTO -->
+      <div class="about-text">
+
+        <h2>Por qué trabajo con clubes y federaciones</h2>
+
+        <!-- Credenciales rápidas -->
+        <div class="about-highlights">
+          <span>🏐 <strong>+30 años en voleibol</strong></span>
+          <span>🎓 <strong>Entrenador certificado internacional</strong></span>
+          <span>📊 <strong>Especialista en análisis con DataVolley</strong></span>
+        </div>
+
+        <p>
+        Empecé a jugar al voleibol en 1994. Desde entonces no he parado — primero como jugador en selecciones metropolitanas sub-16 y sub-18 en Argentina, luego compitiendo en División de Honor y también en España, ya retirado volví a jugar en Primera Nacional y la selección masculina de la UPC con 40 años.
+        Esa trayectoria me dio algo que ningún curso puede enseñar: <strong>entender el juego desde dentro</strong>, saber lo que siente un jugador en cada posición y en cada momento del partido.
+        </p>
+
+        <p>
+        Cuento con certificación de entrenador internacional <strong>FIVB Nivel 2</strong>, en España <strong>Nivel 3 RFEVB</strong> (nivel que habilita para dirigir selecciones nacionales) y en Argentina <strong>Nivel 2 FEVA</strong>.
+        No es una acumulación de títulos — es el resultado de más de dos décadas trabajando en el alto nivel del voleibol.
+        </p>
+
+        <p>
+        Pero saber jugar y tener títulos no es lo mismo que saber enseñar. Por eso me formé como <strong>Profesor de Educación Física</strong> y he construido un perfil pedagógico sólido: metodología de enseñanza integral, coaching, programación neurolingüística y yoga aplicado al deporte.
+        </p>
+
+        <p>
+        Soy <strong>Graduado en Ciencias y Tecnologías Aplicadas al Deporte por la UPC</strong> y actualmente formo parte del Área de Formación de la <strong>Federació Catalana de Voleibol</strong>.
+        Aplico análisis estadístico con <strong>DataVolley</strong> porque tomar decisiones con datos cambia los resultados.
+        </p>
+
+        <p class="about-closing">
+          No trabajo con todos los clubs. Trabajo con los que quieren mejorar de verdad.
+        </p>
+
+      </div>
+
+      <!-- FOTO -->
+      <div class="about-photo">
+        <img src="/about-me.jpg" alt="Ale Gravina Fabregat">
+      </div>
+
+    </div>
+
+  </Container>
+</section>
+
+<style>
+
+.about{
+  margin-top:6rem;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:3rem;
+}
+
+/* TITULO */
+
+.about-text h2{
+  margin-bottom:1rem;
+  font-size:1.9rem;
+}
+
+/* HIGHLIGHTS */
+
+.about-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:1.5rem;
+  font-size:0.9rem;
+}
+
+.about-highlights span{
+  background:#f5f5f5;
+  padding:0.35rem 0.7rem;
+  border-radius:6px;
+}
+
+/* TEXTO */
+
+.about-text p{
+  margin-bottom:1.2rem;
+  line-height:1.65;
+  max-width:720px;
+}
+
+.about-closing{
+  font-weight:600;
+}
+
+/* FOTO */
+
+.about-photo img{
+  width:100%;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-photo{
+    order:-1;
+  }
+
+}
+
+</style>
