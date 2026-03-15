@@ -1,14 +1,16 @@
 ---
-const { title, description, result, cta } = Astro.props;
+const { title, subtitle, description, result, cta } = Astro.props;
 ---
 
 <article class="service-card">
 
-    <h3>{title}</h3>
+    <h2>{title}</h2>
+    <h3>{subtitle}</h3>
 
-    <p class="service-description">
-        {description}
-    </p>
+    <div class="service-description">
+      <p>{description}</p>
+      <button class="read-more">+</button>
+    </div>
 
     <p class="service-result">
         <strong>¿Qué se llevan?</strong><br/>
@@ -34,6 +36,9 @@ const { title, description, result, cta } = Astro.props;
   border-radius:10px;
   background:white;
 
+  display:flex;
+  flex-direction:column;
+
   transition:
     transform .2s ease,
     box-shadow .2s ease,
@@ -49,15 +54,41 @@ const { title, description, result, cta } = Astro.props;
     0 8px 24px rgba(0,0,0,0.08);
 }
 
-.service-card h3{
-  margin-bottom:0.6rem;
-  font-size:1.1rem;
+.service-card h2{
+  margin-bottom:1rem;
+  font-size:1.2rem;
 }
 
-.service-description{
-  margin-bottom:1rem;
+.service-card h3{
+  margin-bottom:0.6rem;
+  font-size:0.9rem;
+}
+
+.service-description p{
   line-height:1.6;
   color:#444;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+
+  transition:all .25s ease;
+}
+
+.service-description.expanded p{
+  -webkit-line-clamp:unset;
+}
+
+.read-more{
+  display: block;
+  margin-left:auto;
+  margin-top:0.3rem;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:1rem;
+  font-weight:600;
 }
 
 .service-result{
@@ -68,6 +99,7 @@ const { title, description, result, cta } = Astro.props;
 
 .service-button {
     display:inline-flex;
+    align-self:flex-end;
     align-items:center;
     gap:0.5rem;
     margin-top: 0.5rem;
@@ -94,3 +126,15 @@ const { title, description, result, cta } = Astro.props;
 }
 
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".read-more").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const container = btn.closest(".service-description")
+      container.classList.toggle("expanded")
+      btn.textContent = container.classList.contains("expanded") ? "−" : "+"
+    })
+  })
+})
+</script>

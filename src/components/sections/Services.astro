@@ -10,37 +10,47 @@ import ServiceCard from "../ui/ServiceCard.astro";
     <header class="services-header">
       <h2>¿En qué puedo ayudarte?</h2>
       <p>
-        Trabajo con clubes y federaciones que quieren dar un salto real en su nivel
-        de juego y en la calidad de sus entrenadores.
+        Trabajo con clubes y federaciones que quieren dar un salto real en su nivel de juego y en la calidad de sus entrenadores.
       </p>
     </header>
 
     <div class="services-grid">
 
       <ServiceCard
-        title="Formación que activa a tu cuerpo técnico"
-        description="Diseño e imparto clínicas y congresos adaptados al nivel real de tus entrenadores. No son charlas genéricas — son sesiones con contenido técnico actual y aplicación práctica inmediata."
+        title="Clinicas y Congresos"
+        subtitle="Formación que activa a tu cuerpo técnico"
+        description="Diseño e imparto clínicas y congresos adaptados al nivel y las necesidades reales de tus entrenadores. No son charlas genéricas — son sesiones con contenido técnico actual, metodología FIVB y aplicación práctica inmediata.
+                    Mi formación como Profesor de Educación Física y mi experiencia en pedagogía y metodología de enseñanza integral me permiten transmitir el conocimiento de forma que realmente se entiende, se interioriza y se aplica. No basta con saber voleibol — hay que saber enseñarlo.
+                    Ideales para federaciones, asociaciones de clubes o eventos de formación anual."
         result="Herramientas concretas que sus entrenadores pueden aplicar en el siguiente entrenamiento."
         cta="Solicitar información"
       />
 
       <ServiceCard
-        title="Un enfoque específico, en profundidad"
-        description="Masterclass centradas en bloques técnicos o tácticos concretos: defensa, organización del ataque, lectura del juego o liderazgo en pista."
+        title="Masterclass"
+        subtitle="Un enfoque específico, en profundidad"
+        description="Las masterclass están pensadas para abordar un bloque técnico o táctico concreto: defensa en sistema, organización del ataque, lectura del juego, liderazgo en pista. Formato concentrado, de alto impacto.
+                    Además del contenido técnico, integro herramientas de coaching y programación neurolingüística (PNL) para trabajar cómo el entrenador comunica, motiva y gestiona a su equipo. Porque la táctica sin comunicación efectiva no llega a los jugadores.
+                    Perfectas para complementar la temporada o preparar a tus entrenadores antes de etapas clave."
         result="Una visión clara y actualizada sobre un aspecto del juego con ejemplos reales."
         cta="Solicitar información"
       />
 
       <ServiceCard
-        title="Aprender haciendo. En pista."
-        description="Talleres y campus que combinan teoría aplicada con trabajo real sobre el terreno junto a tus jugadores o entrenadores."
+        title="Talleres y Campus Prácticos"
+        subtitle="Aprender haciendo. En pista."
+        description="Los talleres y campus combinan teoría aplicada con trabajo real sobre el terreno. Trabajo directamente con tus jugadores o con tus entrenadores en situaciones de entrenamiento reales, analizando, corrigiendo y construyendo juntos.
+                    Mi enfoque de enseñanza integral va más allá de lo técnico: incorporo elementos de concentración, respiración y gestión de la presión competitiva — con base en mi formación en yoga y coaching — para que el jugador no solo mejore su gesto, sino su capacidad de rendir cuando más importa."
         result="Jugadores con más recursos técnicos y entrenadores con herramientas pedagógicas para sostener esa mejora."
         cta="Solicitar información"
       />
 
       <ServiceCard
-        title="Alguien que te acompaña, no que te juzga"
-        description="Asesoría personalizada para entrenadores y directores técnicos. Analizamos planificación, rendimiento y liderazgo."
+        title="Asesoría a Entrenadores"
+        subtitle="Alguien que te acompaña, no que te juzga"
+        description="A veces no necesitas un curso. Necesitas a alguien con experiencia que entienda tu contexto — tu club, tus jugadores, tus recursos — y te ayude a tomar mejores decisiones como entrenador.
+                    Trabajo contigo de forma personalizada: revisamos tu planificación, analizamos el rendimiento de tus jugadores con datos reales (Estadística), identificamos puntos de mejora y construimos soluciones a medida. Y si lo necesitas, también trabajamos cómo lideras, cómo comunicas y cómo gestionas la presión — porque un entrenador que se conoce a sí mismo entrena mejor a los demás. Para eso aplico herramientas de coaching y PNL en el acompañamiento.
+                    Cada proyecto es distinto. Me adapto a ti, no al revés."
         result="Decisiones más claras, planificación más sólida y liderazgo más consciente."
         cta="Cuéntame tu situación"
       />
@@ -59,7 +69,6 @@ import ServiceCard from "../ui/ServiceCard.astro";
 }
 
 .services-header{
-  max-width:720px;
   margin-bottom:3rem;
 }
 
@@ -73,7 +82,7 @@ import ServiceCard from "../ui/ServiceCard.astro";
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(1,1fr);
   gap:2rem;
 }
 
