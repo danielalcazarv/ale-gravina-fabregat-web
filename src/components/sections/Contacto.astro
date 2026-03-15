@@ -1,0 +1,205 @@
+---
+import Container from "../layout/Container.astro";
+---
+
+<section class="contacto">
+  <Container>
+
+    <div class="contacto-grid">
+
+      <div class="contacto-text">
+
+        <h1>Trabajamos juntos?</h1>
+
+        <p class="contacto-intro">
+          Por consultas por favor escribir a 
+          <a href="mailto:alegravinafabregat@gmail.com">
+            alegravinafabregat@gmail.com
+          </a>
+        </p>
+
+        <p class="contacto-alt">
+          o completa el siguiente formulario:
+        </p>
+
+      </div>
+
+
+      <form class="contacto-form">
+
+        <div class="form-field">
+          <label>Nombre y Apellido</label>
+          <input type="text" required />
+        </div>
+
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" required />
+        </div>
+
+        <div class="form-field">
+          <label>Teléfono</label>
+          <input type="tel" />
+        </div>
+
+        <div class="form-field">
+            <label>Asunto</label>
+            <select name="asunto" id="asunto" >
+                <option value="consulta">Consulta general</option>
+                <option value="clinicas">Clinicas y Congresos</option>
+                <option value="masterclass">Masterclass</option>
+                <option value="campus">Talleres y Campus Prácticos</option>
+                <option value="asesoria">Asesoría a Entrenadores</option>
+            </select>
+        </div>
+
+        <div class="form-field">
+          <label>Mensaje</label>
+          <textarea rows="4"></textarea>
+        </div>
+
+        <button class="btn-primary">
+          Enviar
+        </button>
+
+      </form>
+
+    </div>
+
+  </Container>
+</section>
+
+<style>
+
+.contacto{
+    padding:80px 0;
+}
+
+.contacto-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
+    align-items:center;
+}
+
+/* texto */
+
+.contacto-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.contacto-text h1{
+    font-size:2.4rem;
+    margin-bottom:1rem;
+}
+
+.contacto-intro{
+    font-size:1.1rem;
+    color:#444;
+}
+
+.contacto-intro a{
+    color:black;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.contacto-alt{
+    font-size:0.9rem;
+    color:#777;
+    margin-top:0.4rem;
+}
+
+
+/* formulario */
+
+.contacto-form{
+    display:flex;
+    flex-direction:column;
+    gap:1.3rem;
+    max-width:420px;
+}
+
+.form-field{
+    display:flex;
+    flex-direction:column;
+    gap:0.3rem;
+    }
+
+.form-field label{
+    font-size:0.8rem;
+    color:#666;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea{
+    border:none;
+    border-bottom:1px solid #000;
+    padding:0.5rem 0;
+    font-size:0.95rem;
+    outline:none;
+    background:transparent;
+}
+
+.form-field textarea{
+    resize:vertical;
+}
+
+/* botón */
+
+.btn-primary{
+    margin-top:1rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    background: #000;
+    color: #fff;
+    padding:0.8rem 1.6rem;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:4px;
+    border:none;
+    cursor:pointer;
+    }
+
+.btn-primary:hover{
+    background:#eaeaea;
+    color:#000;
+    transform:translateY(-1px);
+}
+
+
+/* responsive */
+
+@media (max-width:900px){
+
+    .contacto-grid{
+        grid-template-columns:1fr;
+        gap:3rem;
+    }
+
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const asunto = params.get("asunto");
+
+        if (!asunto) return;
+
+        // Buscamos por el atributo name en lugar de ID
+        const select = document.querySelector('select[name="asunto"]');
+
+        if (select) {
+            select.value = asunto;
+        }else{
+            select.value = "consulta";
+        }
+    });
+</script>
