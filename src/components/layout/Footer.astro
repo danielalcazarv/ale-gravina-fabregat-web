@@ -154,10 +154,17 @@ import Container from "../layout/Container.astro";
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
 
+@media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
     text-align: center;
   }
 
@@ -168,7 +175,6 @@ import Container from "../layout/Container.astro";
   .footer-cta {
     text-align: center;
   }
-
 }
 
 </style>

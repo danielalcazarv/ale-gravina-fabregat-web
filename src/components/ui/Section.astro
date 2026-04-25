@@ -49,4 +49,24 @@ const { title, subtitle, id } = Astro.props;
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 36px 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
 </style>
