@@ -63,12 +63,12 @@ import Container from "../layout/Container.astro";
 .subtitle {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  color: #444;
+  color: var(--color-muted);
 }
 
 .bio {
   font-size: 0.95rem;
-  color: #666;
+  color: var(--color-subtle);
   max-width: 550px;
   margin-bottom: 2rem;
 }
@@ -82,8 +82,8 @@ import Container from "../layout/Container.astro";
   display:inline-flex;
   align-items:center;
   gap:0.5rem;
-  background: black;
-  color: white;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
   padding: 0.8rem 1.6rem;
   text-decoration: none;
   font-weight: 500;
@@ -91,15 +91,16 @@ import Container from "../layout/Container.astro";
 }
 
 .btn-primary:hover {
-  background: #eaeaea;
-  color: #000;
+  background: var(--color-hover);
+  color: var(--color-accent);
   transform: translateY(-1px);
 }
 
 .icon{
-  width:18px;
-  height:18px;
-  fill:currentColor;
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .hero-image img {
