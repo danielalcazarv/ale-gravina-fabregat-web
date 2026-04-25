@@ -177,12 +177,30 @@ import Container from "../layout/Container.astro";
 /* responsive */
 
 @media (max-width:900px){
-
     .contacto-grid{
         grid-template-columns:1fr;
         gap:3rem;
     }
 
+    .contacto-form{
+        max-width:100%;
+    }
+}
+
+@media (max-width:768px){
+    .contacto-text h1{
+        font-size:1.9rem;
+    }
+}
+
+@media (max-width:480px){
+    .contacto{
+        padding:50px 0;
+    }
+
+    .contacto-text h1{
+        font-size:1.6rem;
+    }
 }
 
 </style>

@@ -9,7 +9,13 @@ import Container from "../layout/Container.astro";
         Alejandro Gravina Fabregat
       </a>
 
-      <ul class="menu">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu">
         <li><a href="/">Inicio</a></li>
         <li><a href="/sobre-mi">Sobre mí</a></li>
         <li><a href="/servicios">Servicios</a></li>
@@ -22,6 +28,7 @@ import Container from "../layout/Container.astro";
 <style>
   header {
     border-bottom: 1px solid #eee;
+    position: relative;
   }
 
   .nav {
@@ -45,4 +52,74 @@ import Container from "../layout/Container.astro";
   .logo {
     font-weight: bold;
   }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: white;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem;
+      gap: 1.2rem;
+      z-index: 100;
+    }
+
+    .menu.open {
+      display: flex;
+    }
+  }
 </style>
+
+<script is:inline>
+  (function () {
+    var toggle = document.getElementById("menu-toggle");
+    var menu = document.getElementById("menu");
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener("click", function () {
+      var isOpen = menu.classList.toggle("open");
+      toggle.classList.toggle("open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  })();
+</script>
